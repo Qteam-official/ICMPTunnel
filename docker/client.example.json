@@ -1,0 +1,9 @@
+{
+  "type": "client",
+  "listen_port_socks": "1010",
+  "server": "127.0.0.1",
+  "timeout": 60,
+  "block_country": "IR",
+  "dns": "8.8.8.8",
+  "key": 20201204
+}

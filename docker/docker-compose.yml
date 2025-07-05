@@ -1,0 +1,18 @@
+services:
+  icmptunnel:
+    image: thisispogger/icmptunnel:latest
+    container_name: icmptunnel
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - ./config.json:/app/config.json:ro
+    healthcheck:
+      test: ["CMD", "pgrep", "-x", "ICMPTunnel"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
